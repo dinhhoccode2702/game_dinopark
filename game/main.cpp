@@ -251,6 +251,7 @@ int main(int argc, char* argv[])
 	TextObject start_button;
 	TextObject guide_button;
 	TextObject quit_button;
+	TextObject continue_button;
 
 	bool is_menu = true;
 	bool start = true ;
@@ -258,7 +259,9 @@ int main(int argc, char* argv[])
 	bool is_quit = false;
 	bool time = false;
 	bool tmp_time = false;
+	bool pause_menu = false;
 	Uint32 time_menu = 0;
+	Uint32 pause_time = 0;
 
 	while (start && !is_quit )
 	{
@@ -346,19 +349,6 @@ int main(int argc, char* argv[])
 				quit_button.SetColor(TextObject::ORANGE_TEXT);
 			}
 			quit_button.RenderText(g_screen, 1280 / 2 - 40 + 5, 480 / 2 + 220 - 15 );
-
-
-			//// Vẽ khung xung quanh nút "START"
-			//GeometricFormat startButtonFrame(1280 / 2 - 40 - 10, 480 / 2 + 120 - 20, 100, 40);
-			//ColorData startButtonFrameColor(0, 0, 255); // Màu xanh dương cho khung
-			//Geometric::RenderOutline(startButtonFrame, startButtonFrameColor, g_screen);
-
-			//// Vẽ khung xung quanh nút "QUIT"
-			//GeometricFormat quitButtonFrame(1280 / 2 - 40 - 10, 480 / 2 + 220 - 20, 100, 40);
-			//ColorData quitButtonFrameColor(0, 0, 255); // Màu xanh dương cho khung
-			//Geometric::RenderOutline(quitButtonFrame, quitButtonFrameColor, g_screen);
-
-
 			SDL_RenderPresent(g_screen);
 			SDL_Delay(100);
 		}
@@ -372,6 +362,64 @@ int main(int argc, char* argv[])
 			p_player.HandleBullet(g_screen);
 			p_player.SetMapXY(map_data.start_x_, map_data.start_y_);
 			p_player.DoPlayer(map_data , g_sound_exp);
+
+			if (g_event.type == SDL_KEYDOWN)
+			{
+				if (g_event.key.keysym.sym == SDLK_ESCAPE)
+				{
+					pause_menu = true;
+					time = false;
+					pause_time = SDL_GetTicks() / 1000;
+				}
+			}
+			if (pause_menu == true)
+			{
+				SDL_Texture* gBackgroundTexture = menu.GetObject();
+				SDL_Rect backgroundRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
+				SDL_RenderCopy(g_screen, gBackgroundTexture, NULL, &backgroundRect);
+				int mouseX, mouseY;
+
+				SDL_GetMouseState(&mouseX, &mouseY);
+
+				continue_button.SetText("CONTINUE");
+
+				quit_button.SetText("QUIT");
+
+				continue_button.LoadFromRenderText(font_menu, g_screen);
+				if (mouseX >= 1280 / 2 - 40 - 20 && mouseX <= 1280 / 2 - 40 + 90 - 20 && mouseY >= 480 / 2 - 15 + 120 && mouseY <= 480 / 2 + 37 - 15 + 120) {
+					continue_button.SetColor(TextObject::RED_TEXT);
+					if (g_event.type == SDL_MOUSEBUTTONDOWN) {
+						if (g_event.button.button == SDL_BUTTON_LEFT)
+						{
+							pause_menu = false;
+							time = true;
+							pause_time = SDL_GetTicks() / 1000 - pause_time;
+						}
+					}
+				}
+				else {
+
+					continue_button.SetColor(TextObject::ORANGE_TEXT);
+				}
+
+				continue_button.RenderText(g_screen, 1280 / 2 - 40 - 20, 480 / 2 + 120 - 15);
+				quit_button.LoadFromRenderText(font_menu, g_screen);
+				if (mouseX >= 1280 / 2 - 40  && mouseX <= 1280 / 2 - 40 + 90 && mouseY >= 480 / 2 - 15 + 220 && mouseY <= 480 / 2 + 37 - 15 + 220) {
+					quit_button.SetColor(TextObject::RED_TEXT);
+					if (g_event.type == SDL_MOUSEBUTTONDOWN) {
+						if (g_event.button.button == SDL_BUTTON_LEFT)
+						{
+							is_quit = true;
+						}
+					}
+				}
+				else {
+					quit_button.SetColor(TextObject::ORANGE_TEXT);
+				}
+				quit_button.RenderText(g_screen, 1280 / 2 - 40 + 5, 480 / 2 + 220 - 15);
+				SDL_RenderPresent(g_screen);
+				SDL_Delay(100);
+			}
 
 			bool is_die = p_player.Getis_die();
 			if (is_die == true)
@@ -564,7 +612,7 @@ int main(int argc, char* argv[])
 			{
 				std::string str_time = "Time: ";
 				Uint32 time_val = SDL_GetTicks() / 1000;
-				Uint32 val_time = 150 - time_val + time_menu;
+				Uint32 val_time = 150 - time_val + time_menu + pause_time;
 				if (val_time <= 0)
 				{
 					if (MessageBox(NULL, L"GAME OVER", L"Info", MB_OK | MB_ICONSTOP) == IDOK)

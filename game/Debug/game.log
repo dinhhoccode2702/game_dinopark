@@ -1,25 +1,31 @@
-﻿  ThreatsObject.cpp
+﻿  main.cpp
 C:\Users\ADMIN\source\repos\game\game\CommonFunction.h(51,2): warning C4091: 'typedef ': ignored on left of 'Input' when no variable is declared
-  (compiling source file 'ThreatsObject.cpp')
+  (compiling source file 'main.cpp')
   
 C:\Users\ADMIN\source\repos\game\game\CommonFunction.h(64,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
-  (compiling source file 'ThreatsObject.cpp')
+  (compiling source file 'main.cpp')
   
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(107,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(108,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(125,33): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(205,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(206,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(208,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(209,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(221,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(235,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(243,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(244,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(246,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(247,45): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(260,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(276,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(292,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\ThreatsObject.cpp(422,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\MainObject.h(63,31): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\Geometric.h(16,2): warning C4091: 'typedef ': ignored on left of 'GeometricFormat' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\Geometric.h(25,2): warning C4091: 'typedef ': ignored on left of 'ColorData' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\main.cpp(147,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(150,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(151,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(170,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(223,41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(455,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(473,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(550,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(565,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(594,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(595,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(645,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(652,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(680,20): warning C4018: '<': signed/unsigned mismatch
   game.vcxproj -> C:\Users\ADMIN\source\repos\game\Debug\game.exe
