@@ -14,18 +14,18 @@ C:\Users\ADMIN\source\repos\game\game\Geometric.h(16,2): warning C4091: 'typedef
 C:\Users\ADMIN\source\repos\game\game\Geometric.h(25,2): warning C4091: 'typedef ': ignored on left of 'ColorData' when no variable is declared
   (compiling source file 'main.cpp')
   
-C:\Users\ADMIN\source\repos\game\game\main.cpp(147,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(150,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(151,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(170,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(223,41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(455,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ADMIN\source\repos\game\game\main.cpp(473,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ADMIN\source\repos\game\game\main.cpp(550,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ADMIN\source\repos\game\game\main.cpp(565,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ADMIN\source\repos\game\game\main.cpp(594,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(595,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(645,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(652,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\source\repos\game\game\main.cpp(680,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(145,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(148,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(149,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(168,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(230,41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(462,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(480,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(557,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(572,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ADMIN\source\repos\game\game\main.cpp(601,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(602,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(652,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(659,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(692,20): warning C4018: '<': signed/unsigned mismatch
   game.vcxproj -> C:\Users\ADMIN\source\repos\game\Debug\game.exe

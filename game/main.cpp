@@ -1,7 +1,4 @@
-﻿
-
-
-#include"CommonFunction.h"
+﻿#include"CommonFunction.h"
 #include "BaseObject.h"
 #include "game_map.h"
 #include "MainObject.h"
@@ -13,6 +10,7 @@
 #include "PlayerPower.h"
 #include "Geometric.h"
 #include <iostream>
+#include "SDL_mixer.h"
 
 BaseObject menu;
 BaseObject g_background;
@@ -204,6 +202,15 @@ int main(int argc, char* argv[])
 //
 	if (LoadBackground() == false)
 		return -1;
+
+	Mix_Music* g_music = Mix_LoadMUS("musicthrough.mp3");
+	if (g_music == NULL)
+	{
+		return -1;
+	}
+
+	Mix_PlayMusic(g_music, -1);
+
 
 	GameMap game_map;
 	game_map.LoadMap("map/map01.dat");
@@ -676,6 +683,11 @@ int main(int argc, char* argv[])
 
 		}
 	}
+
+	Mix_HaltMusic();
+	Mix_FreeMusic(g_music);
+	Mix_CloseAudio();
+
 
 	for (int i = 0; i < threats_list.size(); i++)
 	{

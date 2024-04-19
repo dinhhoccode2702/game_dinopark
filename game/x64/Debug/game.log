@@ -1,4 +1,29 @@
-﻿BaseObject.obj : error LNK2019: unresolved external symbol SDL_MapRGB referenced in function "public: virtual bool __cdecl BaseObject::LoadImg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?LoadImg@BaseObject@@UEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUSDL_Renderer@@@Z)
+﻿  main.cpp
+C:\Users\ADMIN\source\repos\game\game\CommonFunction.h(51,2): warning C4091: 'typedef ': ignored on left of 'Input' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\CommonFunction.h(64,2): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\MainObject.h(63,31): warning C4244: 'return': conversion from 'const float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\Geometric.h(16,2): warning C4091: 'typedef ': ignored on left of 'GeometricFormat' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\Geometric.h(25,2): warning C4091: 'typedef ': ignored on left of 'ColorData' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\ADMIN\source\repos\game\game\main.cpp(145,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(148,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(149,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(168,28): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(230,41): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(601,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(602,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(652,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\game\game\main.cpp(659,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+BaseObject.obj : error LNK2019: unresolved external symbol SDL_MapRGB referenced in function "public: virtual bool __cdecl BaseObject::LoadImg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?LoadImg@BaseObject@@UEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUSDL_Renderer@@@Z)
 BaseObject.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: virtual bool __cdecl BaseObject::LoadImg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?LoadImg@BaseObject@@UEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUSDL_Renderer@@@Z)
 TextObject.obj : error LNK2001: unresolved external symbol SDL_FreeSurface
 BaseObject.obj : error LNK2019: unresolved external symbol SDL_SetColorKey referenced in function "public: virtual bool __cdecl BaseObject::LoadImg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?LoadImg@BaseObject@@UEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUSDL_Renderer@@@Z)
@@ -38,6 +63,8 @@ main.obj : error LNK2019: unresolved external symbol TTF_Init referenced in func
 main.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "bool __cdecl InitData(void)" (?InitData@@YA_NXZ)
 main.obj : error LNK2019: unresolved external symbol Mix_OpenAudio referenced in function "bool __cdecl InitData(void)" (?InitData@@YA_NXZ)
 main.obj : error LNK2019: unresolved external symbol Mix_LoadWAV_RW referenced in function "bool __cdecl InitData(void)" (?InitData@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol Mix_HaltMusic referenced in function main
+main.obj : error LNK2019: unresolved external symbol Mix_CloseAudio referenced in function main
 MainObject.obj : error LNK2019: unresolved external symbol Mix_PlayChannelTimed referenced in function "public: void __cdecl MainObject::CheckToMap(struct Map &,struct Mix_Chunk * * const)" (?CheckToMap@MainObject@@QEAAXAEAUMap@@QEAPEAUMix_Chunk@@@Z)
 TextObject.obj : error LNK2019: unresolved external symbol SDL_RenderCopyEx referenced in function "public: void __cdecl TextObject::RenderText(struct SDL_Renderer *,int,int,struct SDL_Rect *,double,struct SDL_Point *,enum SDL_RendererFlip)" (?RenderText@TextObject@@QEAAXPEAUSDL_Renderer@@HHPEAUSDL_Rect@@NPEAUSDL_Point@@W4SDL_RendererFlip@@@Z)
 TextObject.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "public: bool __cdecl TextObject::LoadFromRenderText(struct _TTF_Font *,struct SDL_Renderer *)" (?LoadFromRenderText@TextObject@@QEAA_NPEAU_TTF_Font@@PEAUSDL_Renderer@@@Z)
@@ -46,4 +73,4 @@ C:\Users\ADMIN\source\repos\game\LibSdl2\SDL2-2.0.8\lib\x86\SDL2main.lib : warni
 C:\Users\ADMIN\source\repos\game\LibSdl2\SDL2_image-2.0.3\lib\x86\SDL2_image.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
 C:\Users\ADMIN\source\repos\game\LibSdl2\SDL2_mixer-2.0.2\lib\x86\SDL2_mixer.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
 C:\Users\ADMIN\source\repos\game\LibSdl2\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\ADMIN\source\repos\game\x64\Debug\game.exe : fatal error LNK1120: 33 unresolved externals
+C:\Users\ADMIN\source\repos\game\x64\Debug\game.exe : fatal error LNK1120: 35 unresolved externals
