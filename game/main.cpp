@@ -1,4 +1,4 @@
-﻿#include"CommonFunction.h"
+﻿﻿#include"CommonFunction.h"
 #include "BaseObject.h"
 #include "game_map.h"
 #include "MainObject.h"
@@ -14,7 +14,7 @@
 
 BaseObject menu;
 BaseObject g_background;
-TTF_Font* font_time = NULL ;
+TTF_Font* font_time = NULL;
 TTF_Font* font_menu = NULL;
 
 bool InitData()
@@ -28,10 +28,10 @@ bool InitData()
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
 	g_window = SDL_CreateWindow("Game Cpp SDL 2.0 - Blog: Mygame",
-									SDL_WINDOWPOS_UNDEFINED,
-									SDL_WINDOWPOS_UNDEFINED,
-									SCREEN_WIDTH, SCREEN_HEIGHT,
-									SDL_WINDOW_SHOWN);
+		SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED,
+		SCREEN_WIDTH, SCREEN_HEIGHT,
+		SDL_WINDOW_SHOWN);
 	if (g_window == NULL)
 	{
 		success = false;
@@ -43,7 +43,7 @@ bool InitData()
 			success = false;
 		else
 		{
-			SDL_SetRenderDrawColor(g_screen, RENDER_DRAW_COLOR , RENDER_DRAW_COLOR , RENDER_DRAW_COLOR, RENDER_DRAW_COLOR);
+			SDL_SetRenderDrawColor(g_screen, RENDER_DRAW_COLOR, RENDER_DRAW_COLOR, RENDER_DRAW_COLOR, RENDER_DRAW_COLOR);
 			int imgFlags = IMG_INIT_PNG; // ho tro dinh dang PNG
 			if (!(IMG_Init(imgFlags) && imgFlags))
 			{
@@ -60,7 +60,7 @@ bool InitData()
 		if (font_time == NULL)
 		{
 			success = false;
-			
+
 		}
 
 		font_menu = TTF_OpenFont("font//dlxfont_.ttf", 15);
@@ -78,7 +78,7 @@ bool InitData()
 		g_sound_bullet[0] = Mix_LoadWAV("soundtirex.wav");
 		g_sound_exp[0] = Mix_LoadWAV("catchcoin.wav");
 
-		 
+
 
 		if (g_sound_bullet[0] == NULL || g_sound_exp[0] == NULL)
 		{
@@ -95,7 +95,7 @@ bool InitData()
 bool LoadMenuBackground()
 {
 	bool ret = menu.LoadImg("img//menu.png", g_screen);
-	if(ret == false)
+	if (ret == false)
 	{
 		return false;
 	}
@@ -128,17 +128,17 @@ void close() {
 }
 
 
-std :: vector<ThreatsObject*> MakeThreadList()
+std::vector<ThreatsObject*> MakeThreadList()
 {
 	std::vector<ThreatsObject*> list_threats;
-	
+
 	ThreatsObject* dynamic_threats = new ThreatsObject[20];
 	for (int i = 0; i < 20; i++)
 	{
 		ThreatsObject* p_threat = (dynamic_threats + i);
 		if (p_threat != NULL)
 		{
-			
+
 			p_threat->LoadImg("img//threat_left.png", g_screen);
 			p_threat->set_clips();
 			p_threat->set_type_move(ThreatsObject::MOVE_IN_SPACE_THREAT);
@@ -164,8 +164,8 @@ std :: vector<ThreatsObject*> MakeThreadList()
 		if (p_threat != NULL)
 		{
 
-			
-			p_threat->set_x_pos(700 + i*1200);
+
+			p_threat->set_x_pos(700 + i * 1200);
 			/*if (p_player.GetXpos() > p_threat->get_x_pos())
 			{
 				std::cout << p_player.GetXpos() << "                " << p_threat->get_x_pos();
@@ -199,7 +199,7 @@ int main(int argc, char* argv[])
 
 	if (LoadMenuBackground() == false)
 		return -1;
-//
+	//
 	if (LoadBackground() == false)
 		return -1;
 
@@ -261,7 +261,7 @@ int main(int argc, char* argv[])
 	TextObject continue_button;
 
 	bool is_menu = true;
-	bool start = true ;
+	bool start = true;
 	bool quit = false;
 	bool is_quit = false;
 	bool time = false;
@@ -270,7 +270,7 @@ int main(int argc, char* argv[])
 	Uint32 time_menu = 0;
 	Uint32 pause_time = 0;
 
-	while (start && !is_quit )
+	while (start && !is_quit)
 	{
 		fps_timer.start();
 
@@ -283,13 +283,13 @@ int main(int argc, char* argv[])
 			}
 
 
-			p_player.HandelInputAction(g_event, g_screen , g_sound_bullet);
+			p_player.HandelInputAction(g_event, g_screen, g_sound_bullet);
 
 		}
 
 		SDL_SetRenderDrawColor(g_screen, RENDER_DRAW_COLOR, RENDER_DRAW_COLOR, RENDER_DRAW_COLOR, RENDER_DRAW_COLOR);
 		SDL_RenderClear(g_screen);
-		
+
 
 		if (is_menu)
 		{
@@ -305,11 +305,11 @@ int main(int argc, char* argv[])
 			SDL_GetMouseState(&mouseX, &mouseY);
 
 			start_button.SetText("START");
-			
+
 			quit_button.SetText("QUIT");
 
 			start_button.LoadFromRenderText(font_menu, g_screen);
-			if (mouseX >= 1280 / 2 - 40 && mouseX <= 1280 / 2 - 40 + 90 && mouseY >= 480 / 2 - 15 + 120 && mouseY <= 480 / 2 + 37 - 15 + 120 ) {
+			if (mouseX >= 1280 / 2 - 40 && mouseX <= 1280 / 2 - 40 + 90 && mouseY >= 480 / 2 - 15 + 120 && mouseY <= 480 / 2 + 37 - 15 + 120) {
 				start_button.SetColor(TextObject::RED_TEXT);
 				if (g_event.type == SDL_MOUSEBUTTONDOWN) {
 					if (g_event.button.button == SDL_BUTTON_LEFT)
@@ -330,7 +330,7 @@ int main(int argc, char* argv[])
 				start_button.SetColor(TextObject::ORANGE_TEXT);
 			}
 
-			start_button.RenderText(g_screen, 1280 / 2 - 40, 480 / 2 + 120 - 15 );
+			start_button.RenderText(g_screen, 1280 / 2 - 40, 480 / 2 + 120 - 15);
 
 			/*guide_button.LoadFromRenderText(font_menu, g_screen);
 			if (mouseX >= 1280 / 2 - 40 && mouseX <= 1280 / 2 - 40 + 90 && mouseY >= 480 / 2 - 15 + 50 && mouseY <= 480 / 2 + 37 - 15 + 50) {
@@ -355,7 +355,7 @@ int main(int argc, char* argv[])
 			else {
 				quit_button.SetColor(TextObject::ORANGE_TEXT);
 			}
-			quit_button.RenderText(g_screen, 1280 / 2 - 40 + 5, 480 / 2 + 220 - 15 );
+			quit_button.RenderText(g_screen, 1280 / 2 - 40 + 5, 480 / 2 + 220 - 15);
 			SDL_RenderPresent(g_screen);
 			SDL_Delay(100);
 		}
@@ -368,7 +368,7 @@ int main(int argc, char* argv[])
 
 			p_player.HandleBullet(g_screen);
 			p_player.SetMapXY(map_data.start_x_, map_data.start_y_);
-			p_player.DoPlayer(map_data , g_sound_exp);
+			p_player.DoPlayer(map_data, g_sound_exp);
 
 			if (g_event.type == SDL_KEYDOWN)
 			{
@@ -411,7 +411,7 @@ int main(int argc, char* argv[])
 
 				continue_button.RenderText(g_screen, 1280 / 2 - 40 - 20, 480 / 2 + 120 - 15);
 				quit_button.LoadFromRenderText(font_menu, g_screen);
-				if (mouseX >= 1280 / 2 - 40  && mouseX <= 1280 / 2 - 40 + 90 && mouseY >= 480 / 2 - 15 + 220 && mouseY <= 480 / 2 + 37 - 15 + 220) {
+				if (mouseX >= 1280 / 2 - 40 && mouseX <= 1280 / 2 - 40 + 90 && mouseY >= 480 / 2 - 15 + 220 && mouseY <= 480 / 2 + 37 - 15 + 220) {
 					quit_button.SetColor(TextObject::RED_TEXT);
 					if (g_event.type == SDL_MOUSEBUTTONDOWN) {
 						if (g_event.button.button == SDL_BUTTON_LEFT)
@@ -493,7 +493,7 @@ int main(int argc, char* argv[])
 						if (pt_bullet)
 						{
 							bCol1 = SDLCommonFunction::CheckCollision(pt_bullet->GetRect(), rect_player);
-							
+
 							if (bCol1)
 							{
 								p_threat->SetBulletGet(jj);
@@ -638,7 +638,7 @@ int main(int argc, char* argv[])
 					time_game.RenderText(g_screen, SCREEN_WIDTH - 200, 15);
 				}
 			}
-			
+
 
 			//mark_value += p_player.GetMoneyCount();
 
@@ -691,7 +691,7 @@ int main(int argc, char* argv[])
 
 	for (int i = 0; i < threats_list.size(); i++)
 	{
-		ThreatsObject* p_threat  = threats_list.at(i);
+		ThreatsObject* p_threat = threats_list.at(i);
 		if (p_threat)
 		{
 			p_threat->Free();

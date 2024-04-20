@@ -1,4 +1,11 @@
 ﻿  main.cpp
+C:\Users\ADMIN\source\repos\game\game\main.cpp(1,4): error C2014: preprocessor command must start as first nonwhite space
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,1): error C2144: syntax error: 'int' should be preceded by ';'
+  (compiling source file 'main.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\sal.h(2361,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'main.cpp')
+  
 C:\Users\ADMIN\source\repos\game\game\CommonFunction.h(51,2): warning C4091: 'typedef ': ignored on left of 'Input' when no variable is declared
   (compiling source file 'main.cpp')
   
@@ -28,4 +35,3 @@ C:\Users\ADMIN\source\repos\game\game\main.cpp(602,20): warning C4244: 'initiali
 C:\Users\ADMIN\source\repos\game\game\main.cpp(652,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\ADMIN\source\repos\game\game\main.cpp(659,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\ADMIN\source\repos\game\game\main.cpp(692,20): warning C4018: '<': signed/unsigned mismatch
-  game.vcxproj -> C:\Users\ADMIN\source\repos\game\Debug\game.exe

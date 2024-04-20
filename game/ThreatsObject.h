@@ -44,6 +44,7 @@ public:
 	void set_type_move(const int& typeMove) { type_move_ = typeMove; }
 	void SetAnimationPos(const int& pos_a, const int& pos_b) { animation_a_ = pos_a, animation_b_ = pos_b; }
 	void set_input_left(const int& ipLeft) { input_type_.left_ = ipLeft; };
+	void set_input_right(const int& ipRight) { input_type_.right_ = ipRight; };
 	void ImpMoveType(SDL_Renderer* screen);
 
 	std::vector<BulletObject*> get_bullet_list() const { return bullet_list_; }
@@ -87,6 +88,7 @@ private:
 	std::vector<BulletObject*> bullet_list_;
 	SDL_Rect player1;
 	BaseObject player;
+	bool huong;
 };
 
 

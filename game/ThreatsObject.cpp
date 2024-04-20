@@ -169,8 +169,8 @@ void ThreatsObject::InitThreats()
 
 void ThreatsObject::SetBulletGet(const int& idx)
 {
-		BulletObject* p_bullet = bullet_list_.at(idx);
-		p_bullet->SetRect(rect_.x + 20, rect_.y + 10);
+	BulletObject* p_bullet = bullet_list_.at(idx);
+	p_bullet->SetRect(rect_.x + 20, rect_.y + 10);
 }
 
 
@@ -215,27 +215,27 @@ void ThreatsObject::CheckToMap(Map& map_data)
 			int val1 = map_data.tile[y1][x2];
 			int val2 = map_data.tile[y2][x2];
 
-			
-				if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
-				{
-					x_pos_ = x2 * TILE_SIZE;
-					x_pos_ -= width_frame_ + 1;
-					x_val_ = 0;
-				}
-			
+
+			if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
+			{
+				x_pos_ = x2 * TILE_SIZE;
+				x_pos_ -= width_frame_ + 1;
+				x_val_ = 0;
+			}
+
 		}
 		else if (x_val_ < 0)
 		{
 			int val1 = map_data.tile[y1][x1];
 			int val2 = map_data.tile[y2][x1];
 
-			
-				if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
-				{
-					x_pos_ = (x1 + 1) * TILE_SIZE;
-					x_val_ = 0;
-				}
-			
+
+			if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
+			{
+				x_pos_ = (x1 + 1) * TILE_SIZE;
+				x_val_ = 0;
+			}
+
 		}
 	}
 
@@ -254,29 +254,29 @@ void ThreatsObject::CheckToMap(Map& map_data)
 			int val1 = map_data.tile[y2][x1];
 			int val2 = map_data.tile[y2][x2];
 
-			
-				if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
-				{
-					y_pos_ = y2 * TILE_SIZE;
-					y_pos_ -= (height_frame_ + 1);
-					y_val_ = 0;
-					
-					on_ground_ = true;
-				}
-			
+
+			if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
+			{
+				y_pos_ = y2 * TILE_SIZE;
+				y_pos_ -= (height_frame_ + 1);
+				y_val_ = 0;
+
+				on_ground_ = true;
+			}
+
 		}
 		else if (y_val_ < 0)
 		{
 			int val1 = map_data.tile[y1][x1];
 			int val2 = map_data.tile[y1][x2];
 
-			
-				if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
-				{
-					y_pos_ = (y1 + 1) * TILE_SIZE;
-					y_val_ = 0;
-				}
-			
+
+			if ((val1 != BLANK_TILE && val1 != STATE_MONEY) || (val2 != BLANK_TILE && val2 != STATE_MONEY))
+			{
+				y_pos_ = (y1 + 1) * TILE_SIZE;
+				y_val_ = 0;
+			}
+
 		}
 	}
 
@@ -300,69 +300,69 @@ void ThreatsObject::CheckToMap(Map& map_data)
 
 void ThreatsObject::ImpMoveType(SDL_Renderer* screen)
 {
-		if (type_move_ == STATIC_THREAT)
+	if (type_move_ == STATIC_THREAT)
+	{
+		;//
+	}
+	else
+	{
+		if (on_ground_ == true)
 		{
-			;//
-		}
-		else
-		{
-			if (on_ground_ == true)
+			SDL_Rect main_object_position = player1;
+
+			if (rect_.x >= 0 && abs(rect_.x - main_object_position.x) < 700)
 			{
-				SDL_Rect main_object_position = player1;
-
-				if (rect_.x >= 0 && abs(rect_.x - main_object_position.x) < 700)
+				if (main_object_position.x < rect_.x)
 				{
-					if (main_object_position.x < rect_.x)
-					{
-						SetAnimationPos(main_object_position.x, rect_.x);
-						input_type_.left_ = 1;
-						input_type_.right_ = 0;
-						LoadImg("img//threat_left.png", screen);
-					}
-					else if (main_object_position.x > rect_.x)
-					{
-						SetAnimationPos(rect_.x, main_object_position.x);
-						input_type_.left_ = 0;
-						input_type_.right_ = 1;
-						LoadImg("img//threat_right.png", screen);
-					}
-
-				}
-				else
-				{
-					if (x_pos_ > animation_b_)
-					{
-						input_type_.left_ = 1;
-						input_type_.right_ = 0;
-						LoadImg("img//threat_left.png", screen);
-					}
-					else if (x_pos_ < animation_a_)
-					{
-						input_type_.left_ = 0;
-						input_type_.right_ = 1;
-						LoadImg("img//threat_right.png", screen);
-					}
-				}
-
-				if (input_type_.left_ == 1)
-				{
+					SetAnimationPos(main_object_position.x, rect_.x);
+					input_type_.left_ = 1;
+					input_type_.right_ = 0;
 					LoadImg("img//threat_left.png", screen);
 				}
-				else
+				else if (main_object_position.x > rect_.x)
 				{
+					SetAnimationPos(rect_.x, main_object_position.x);
+					input_type_.left_ = 0;
+					input_type_.right_ = 1;
 					LoadImg("img//threat_right.png", screen);
 				}
-				
+
 			}
 			else
 			{
-				if (input_type_.left_ == 1)
+				if (x_pos_ > animation_b_)
 				{
+					input_type_.left_ = 1;
+					input_type_.right_ = 0;
 					LoadImg("img//threat_left.png", screen);
 				}
+				else if (x_pos_ < animation_a_)
+				{
+					input_type_.left_ = 0;
+					input_type_.right_ = 1;
+					LoadImg("img//threat_right.png", screen);
+				}
+			}
+
+			if (input_type_.left_ == 1)
+			{
+				LoadImg("img//threat_left.png", screen);
+			}
+			else
+			{
+				LoadImg("img//threat_right.png", screen);
+			}
+
+		}
+		else
+		{
+			if (input_type_.left_ == 1)
+			{
+				LoadImg("img//threat_left.png", screen);
 			}
 		}
-	
+	}
+
 }
 
 
@@ -371,17 +371,17 @@ void ThreatsObject::InitBullet(BulletObject* p_bullet, SDL_Renderer* screen)
 	if (p_bullet != NULL)
 	{
 		p_bullet->set_bullet_type(BulletObject::LAZER_BULLET_LEFT);
-		bool ret =  p_bullet -> LoadImgBullet(screen);
+		bool ret = p_bullet->LoadImgBullet(screen);
 		if (ret)
 		{
 			p_bullet->set_is_move(true);
-			
+
 			p_bullet->set_bullet_dir(BulletObject::DIR_LEFT);
 			p_bullet->SetRect(rect_.x + 5, rect_.y + 30);
 			p_bullet->set_x_val(15);
 			bullet_list_.push_back(p_bullet);
 		}
-		
+
 	}
 }
 
@@ -426,11 +426,11 @@ void ThreatsObject::MakeBullet(SDL_Renderer* screen, const int& x_limit, const i
 		{
 			if (p_bullet->get_is_move())
 			{
-			
-			int bullet_distance = rect_.x + width_frame_ - p_bullet->GetRect().x;
+
+				int bullet_distance = rect_.x + width_frame_ - p_bullet->GetRect().x;
 				if (bullet_distance < 300 && bullet_distance > 0)
 				{
-					
+
 					p_bullet->HandleMove(x_limit, y_limit);
 					p_bullet->Render(screen);
 				}
@@ -442,11 +442,8 @@ void ThreatsObject::MakeBullet(SDL_Renderer* screen, const int& x_limit, const i
 			else
 			{
 				p_bullet->set_is_move(true);
-				p_bullet->SetRect(rect_.x + 5 , rect_.y + 30);
+				p_bullet->SetRect(rect_.x + 5, rect_.y + 30);
 			}
 		}
 	}
 }
-
-
-
